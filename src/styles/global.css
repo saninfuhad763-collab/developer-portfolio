@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  /* Design Token Placeholders */
+  
+  /* Colors */
+  --color-primary: #3b82f6; /* Placeholder */
+  --color-secondary: #8b5cf6; /* Placeholder */
+  --color-accent: #f59e0b; /* Placeholder */
+  --color-background-light: #ffffff; /* Placeholder */
+  --color-background-dark: #0f172a; /* Placeholder */
+  --color-text-light: #0f172a; /* Placeholder */
+  --color-text-dark: #f8fafc; /* Placeholder */
+
+  /* Typography */
+  --font-primary: "Inter", sans-serif; /* Placeholder */
+  --font-secondary: "Roboto", sans-serif; /* Placeholder */
+
+  /* Spacing */
+  --spacing-section-sm: 2rem; /* Placeholder */
+  --spacing-section-md: 4rem; /* Placeholder */
+  --spacing-section-lg: 8rem; /* Placeholder */
+
+  /* Radius */
+  --radius-card: 0.5rem; /* Placeholder */
+  --radius-button: 0.25rem; /* Placeholder */
+
+  /* Shadows */
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* Placeholder */
+
+  /* Breakpoints (using standard tailwind conventions or custom if needed) */
+  --breakpoint-xs: 320px; /* Placeholder */
+
+  /* Motion */
+  --animate-transition-fast: 150ms ease-in-out; /* Placeholder */
+  --animate-transition-normal: 300ms ease-in-out; /* Placeholder */
+}
+
+/* Custom variant for dark mode based on class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-color: var(--color-background-light);
+    --text-color: var(--color-text-light);
+  }
+
+  .dark {
+    --bg-color: var(--color-background-dark);
+    --text-color: var(--color-text-dark);
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    transition: background-color var(--animate-transition-normal), color var(--animate-transition-normal);
+  }
+}
