@@ -9,7 +9,7 @@ export const SectionHeading = ({
 }) => {
   return (
     <div className={cn(
-      "flex flex-col gap-3",
+      "flex flex-col gap-5",
       centered ? "text-center items-center" : "text-left items-start",
       className
     )}>

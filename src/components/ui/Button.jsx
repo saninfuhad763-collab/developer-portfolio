@@ -14,7 +14,7 @@ export const Button = forwardRef(({
   const variants = {
     primary: "bg-accent-primary text-white hover:bg-accent-hover border border-transparent shadow-sm",
     secondary: "bg-surface-secondary text-text-primary hover:bg-border border border-border shadow-sm",
-    ghost: "bg-transparent text-text-primary hover:bg-surface-secondary",
+    ghost: "bg-transparent text-text-primary hover:bg-surface-secondary border border-transparent",
     outline: "bg-transparent text-text-primary border border-border hover:bg-surface-secondary"
   };
 
