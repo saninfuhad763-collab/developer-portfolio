@@ -48,8 +48,9 @@ export const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Download Resume
+                Get In Touch
               </Button>
             </div>
 

@@ -1,4 +1,5 @@
 import { Navbar } from "../components/navigation/Navbar";
+import { Footer } from "../components/layout/Footer";
 
 export const AppShell = ({ children }) => {
   return (
@@ -7,6 +8,7 @@ export const AppShell = ({ children }) => {
       <main className="flex-1 flex flex-col">
         {children}
       </main>
+      <Footer />
     </div>
   );
 };
