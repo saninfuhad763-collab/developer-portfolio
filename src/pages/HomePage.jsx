@@ -2,18 +2,14 @@ import { Section } from "../components/layout/Section";
 import { Container } from "../components/layout/Container";
 import { Hero } from "../components/sections/Hero";
 import { About } from "../components/sections/About";
+import { Skills } from "../components/sections/Skills";
 
 export const HomePage = () => {
   return (
     <>
       <Hero />
       <About />
-
-      <Section id="skills">
-        <Container>
-          <h2 className="text-h2">Skills Placeholder</h2>
-        </Container>
-      </Section>
+      <Skills />
 
       <Section id="projects" variant="secondary">
         <Container>
