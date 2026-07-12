@@ -5,13 +5,13 @@ export const SkillCard = ({ title, description, icon, skills, className }) => {
   return (
     <div 
       className={cn(
-        "p-6 bg-surface border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col gap-4",
+        "p-8 bg-surface border border-border/60 rounded-2xl shadow-sm hover:shadow-md hover:border-border transition-all duration-300 hover:-translate-y-1 flex flex-col gap-6 h-full",
         className
       )}
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-4">
         {icon && (
-          <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-surface-secondary border border-border text-text-primary shadow-sm">
+          <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-accent-primary/10 text-accent-primary shrink-0">
             {icon}
           </div>
         )}
@@ -24,12 +24,12 @@ export const SkillCard = ({ title, description, icon, skills, className }) => {
         </p>
       )}
 
-      <div className="flex flex-wrap gap-2 mt-2">
+      <div className="flex flex-wrap gap-2.5 mt-auto pt-2">
         {skills.map((skill) => (
           <Badge 
             key={skill} 
             variant="default" 
-            className="px-3 py-1 bg-surface-secondary hover:bg-border transition-colors cursor-default"
+            className="px-3 py-1.5 bg-surface text-small text-text-secondary border border-border/60 rounded-lg hover:border-border hover:bg-surface-secondary hover:text-text-primary hover:shadow-sm transition-all duration-200 cursor-default"
           >
             {skill}
           </Badge>
