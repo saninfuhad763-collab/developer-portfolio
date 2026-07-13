@@ -24,6 +24,14 @@
     <meta property="twitter:title" content="Fuhad Saneen | Full Stack Developer" />
     <meta property="twitter:description" content="Fuhad Saneen is a Full Stack Developer specializing in React, Node.js, Django, AI-powered web applications, and production-focused engineering." />
     <meta property="twitter:image" content="https://developer-portfolio-iota-flax.vercel.app/assets/profile/profile-photo.webp" />
+    
+    <!-- FOUC Prevention -->
+    <script>
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark' || !theme) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
