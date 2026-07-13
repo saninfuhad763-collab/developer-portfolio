@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <Section 
       id="home" 
-      className="min-h-screen flex items-center pt-24 pb-12 overflow-hidden" 
+      className="min-h-[100vh] min-h-[100svh] flex items-center pt-24 pb-12 overflow-hidden" 
       spacing="none"
     >
       <Container>
