@@ -26,8 +26,8 @@ export const Navbar = () => {
         className={cn(
           "fixed top-0 inset-x-0 z-40 transition-all duration-300 border-b",
           isScrolled 
-            ? "bg-surface/80 backdrop-blur-md border-border shadow-sm py-3" 
-            : "bg-transparent border-transparent py-5"
+            ? "bg-surface/80 backdrop-blur-md border-black/5 dark:border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.03)] py-2 md:py-3 lg:py-2" 
+            : "bg-surface/50 backdrop-blur-md border-black/5 dark:border-white/10 shadow-[0_1px_3px_rgba(0,0,0,0.02)] py-4 md:py-5 lg:py-4"
         )}
       >
         <Container>
