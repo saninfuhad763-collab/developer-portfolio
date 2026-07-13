@@ -5,10 +5,10 @@ export const Reveal = ({
   children, 
   className,
   delay = 0, // Delay in seconds (e.g. 0.05 for stagger)
-  threshold = 0.2,
+  rootMargin = '-50px 0px',
   as: Component = "div"
 }) => {
-  const { ref, isRevealed } = useReveal({ threshold });
+  const { ref, isRevealed } = useReveal({ rootMargin });
 
   return (
     <Component

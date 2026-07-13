@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-export const useReveal = ({ threshold = 0.2, rootMargin = '0px', triggerOnce = false } = {}) => {
+export const useReveal = ({ rootMargin = '-50px 0px', triggerOnce = false } = {}) => {
   const ref = useRef(null);
   const [prefersReducedMotion] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -17,20 +17,16 @@ export const useReveal = ({ threshold = 0.2, rootMargin = '0px', triggerOnce = f
     const currentRef = ref.current;
     if (!currentRef) return;
 
-    // Use an array of thresholds: 0 to detect full exit, and the target threshold for reveal
-    const targetThreshold = Array.isArray(threshold) ? threshold[0] : threshold;
-    const uniqueThresholds = [...new Set([0, targetThreshold])].sort();
-
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= targetThreshold) {
+        if (entry.isIntersecting) {
           setIsRevealed(true);
           if (triggerOnce) observer.disconnect();
-        } else if (!entry.isIntersecting) {
+        } else {
           if (!triggerOnce) setIsRevealed(false);
         }
       },
-      { threshold: uniqueThresholds, rootMargin }
+      { threshold: 0, rootMargin }
     );
 
     observer.observe(currentRef);
@@ -38,7 +34,7 @@ export const useReveal = ({ threshold = 0.2, rootMargin = '0px', triggerOnce = f
     return () => {
       observer.disconnect();
     };
-  }, [threshold, rootMargin, triggerOnce, prefersReducedMotion]);
+  }, [rootMargin, triggerOnce, prefersReducedMotion]);
 
   return { ref, isRevealed };
 };
