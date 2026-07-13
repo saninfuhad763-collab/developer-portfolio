@@ -27,7 +27,7 @@ export const Section = ({
       id={id}
       aria-labelledby={ariaLabelledby}
       className={cn(
-        "scroll-mt-16 md:scroll-mt-24",
+        "scroll-mt-16 md:scroll-mt-[69px]",
         variants[variant],
         spacings[spacing],
         className

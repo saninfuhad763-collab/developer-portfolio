@@ -2,13 +2,13 @@ import { Container } from "./Container";
 
 export const Footer = () => {
   const quickLinks = [
-    { name: "Home", target: "hero" },
-    { name: "About", target: "about" },
-    { name: "Skills", target: "skills" },
-    { name: "Projects", target: "projects" },
-    { name: "Professional Journey", target: "experience" },
-    { name: "Education & Certifications", target: "education" },
-    { name: "Contact", target: "contact" }
+    { name: "Home", target: "hero", orderClass: "md:order-1" },
+    { name: "About", target: "about", orderClass: "md:order-3" },
+    { name: "Skills", target: "skills", orderClass: "md:order-5" },
+    { name: "Projects", target: "projects", orderClass: "md:order-2" },
+    { name: "Experience", target: "experience", orderClass: "md:order-4" },
+    { name: "Education", target: "education", orderClass: "md:order-6" },
+    { name: "Contact", target: "contact", orderClass: "md:order-7" }
   ];
 
   const socialLinks = [
@@ -42,12 +42,12 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-surface-secondary border-t border-border pt-16 pb-8 mt-auto animate-fade-in-up">
+    <footer className="bg-surface-secondary border-t border-border pt-16 md:pt-8 pb-8 md:pb-3 mt-auto animate-fade-in-up">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 mb-16 md:mb-4">
           
           {/* Left: Branding & Tagline */}
-          <div className="flex flex-col items-start gap-4">
+          <div className="md:col-span-2 flex flex-col items-start gap-4 md:gap-2 pr-0 lg:pr-8">
             <div>
               <h2 className="text-h4 font-bold text-text-primary tracking-wide">Fuhad Saneen</h2>
               <p className="text-small font-semibold text-accent-primary uppercase tracking-widest mt-1">Full Stack Developer</p>
@@ -58,16 +58,16 @@ export const Footer = () => {
           </div>
 
           {/* Center: Quick Links */}
-          <div className="flex flex-col items-start lg:items-center">
-            <div className="flex flex-col gap-3">
+          <div className="md:col-span-1 flex flex-col items-start lg:items-center">
+            <div className="flex flex-col gap-3 md:gap-2">
               <h3 className="text-small font-semibold text-text-primary uppercase tracking-widest mb-2">Quick Links</h3>
-              <nav className="flex flex-col gap-2.5">
+              <nav className="flex flex-col md:grid md:grid-cols-2 gap-2.5 md:gap-x-6 md:gap-y-1.5 w-full">
                 {quickLinks.map((link) => (
                   <a
                     key={link.name}
                     href={`#${link.target}`}
                     onClick={(e) => handleScroll(e, link.target)}
-                    className="text-body text-text-secondary hover:text-accent-primary hover:underline underline-offset-4 transition-all duration-300 w-fit"
+                    className={`text-body text-text-secondary hover:text-accent-primary hover:underline underline-offset-4 transition-all duration-300 w-fit ${link.orderClass || ''}`}
                   >
                     {link.name}
                   </a>
@@ -77,10 +77,10 @@ export const Footer = () => {
           </div>
 
           {/* Right: Professional Links */}
-          <div className="flex flex-col items-start lg:items-end">
+          <div className="md:col-span-1 flex flex-col items-start md:items-end">
             <div className="flex flex-col gap-3">
               <h3 className="text-small font-semibold text-text-primary uppercase tracking-widest mb-2">Connect</h3>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 md:gap-2.5">
                 {socialLinks.map((link) => (
                   <a
                     key={link.name}
@@ -102,7 +102,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom: Copyright & Tech */}
-        <div className="border-t border-border/60 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <div className="border-t border-border/60 pt-8 md:pt-3 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-small text-text-muted">
             &copy; 2026 Fuhad Saneen.
           </p>
